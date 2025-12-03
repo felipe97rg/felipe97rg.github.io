@@ -1,44 +1,142 @@
-/* style.css */
-
-/* Ajustes generales del cuerpo */
-body {
-    background-color: #f4f4f9;
-    padding-top: 50px;
+/* --- Variables CSS --- */
+/* Definimos la paleta de colores aquí para que sea fácil cambiarla luego */
+:root {
+    --primary-color: #2563eb;    /* Un azul moderno y vibrante */
+    --secondary-color: #1e40af;  /* Un azul más oscuro para efectos hover */
+    --bg-body: #f8fafc;          /* Fondo gris muy claro, no blanco puro */
+    --text-main: #1e293b;        /* Color de texto principal (gris oscuro) */
+    --text-muted: #64748b;       /* Color para texto secundario */
+    --card-bg: #ffffff;          /* Fondo blanco puro para las tarjetas */
+    --shadow-soft: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); /* Sombra moderna y suave */
+    --shadow-hover: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04); /* Sombra más fuerte al pasar el mouse */
 }
 
-/* Estilos para los botones de redes sociales */
+/* --- Ajustes Generales y Tipografía --- */
+body {
+    font-family: 'Inter', sans-serif; /* Fuente moderna para el cuerpo */
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    padding-top: 80px; /* Más espacio arriba */
+    line-height: 1.7; /* Mejor lectura */
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Poppins', sans-serif; /* Fuente fuerte para títulos */
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+h1 strong {
+    color: var(--primary-color); /* Resaltamos tu nombre con el color principal */
+}
+
+.lead {
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+hr {
+    opacity: 0.1; /* Línea separadora muy sutil */
+    margin: 4rem 0;
+}
+
+/* --- Header Section --- */
+/* Hacemos la imagen principal más atractiva */
+header img.img-fluid {
+    border-radius: 24px; /* Bordes muy redondeados */
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s ease;
+}
+
+header img.img-fluid:hover {
+    transform: scale(1.02);
+}
+
+/* --- Botones Modernos --- */
+/* Rediseñamos los iconos sociales */
 .social-button {
-    margin-right: 15px;
-    color: #333;
+    margin-right: 20px;
+    color: var(--text-muted);
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
 .social-button:hover {
-    color: #007bff; /* Azul al pasar el mouse */
+    color: var(--primary-color);
+    transform: translateY(-3px); /* Pequeño salto al pasar el mouse */
 }
 
-/* Estilos para las tarjetas de proyectos */
+/* Botón principal (CV) estilo "píldora" con degradado */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    border: none;
+    border-radius: 50px !important; /* Forma de píldora */
+    padding: 12px 30px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4); /* Sombra de color azul */
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.5);
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+}
+
+/* --- Tarjetas de Proyectos (El cambio más grande) --- */
 .card-project {
-    transition: transform 0.3s;
-    height: 100%; /* Para que todas las tarjetas midan lo mismo */
-    color: white; /* Texto blanco porque el fondo es oscuro */
-    border: none; /* Quitamos bordes por defecto */
+    background-color: var(--card-bg); /* Fondo blanco */
+    border: none; /* Sin bordes duros */
+    border-radius: 20px; /* Esquinas muy redondeadas */
+    box-shadow: var(--shadow-soft); /* Sombra suave en lugar de color de fondo */
+    overflow: hidden; /* Para que la imagen respete el borde redondeado */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Transición elástica moderna */
+    height: 100%;
 }
 
 .card-project:hover {
-    transform: scale(1.05); /* Efecto de "zoom" */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Sombra al levantar */
+    transform: translateY(-12px); /* Se levanta considerablemente */
+    box-shadow: var(--shadow-hover);
 }
 
-/* Ajuste para las imágenes de los proyectos */
 .card-img-top {
-    height: 200px; /* Altura fija */
-    object-fit: cover; /* Recorta la imagen para que llene el espacio sin deformarse */
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 1px solid rgba(0,0,0,0.05); /* Separador sutil */
 }
 
-/* Ajustes opcionales para el texto de descripción */
-.lead {
-    font-size: 1rem;
-    line-height: 1.6;
+.card-project .card-body {
+    padding: 2rem;
+    text-align: left; /* Alineación a la izquierda se ve más profesional */
+}
+
+.card-project h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.card-project p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Botón dentro de las tarjetas (Estilo outline) */
+.card-project .btn-light {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color) !important;
+    border-radius: 50px !important;
+    padding: 8px 24px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.card-project .btn-light:hover {
+    background-color: var(--primary-color);
+    color: white !important;
 }
