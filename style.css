@@ -1,0 +1,44 @@
+/* style.css */
+
+/* Ajustes generales del cuerpo */
+body {
+    background-color: #f4f4f9;
+    padding-top: 50px;
+}
+
+/* Estilos para los botones de redes sociales */
+.social-button {
+    margin-right: 15px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-button:hover {
+    color: #007bff; /* Azul al pasar el mouse */
+}
+
+/* Estilos para las tarjetas de proyectos */
+.card-project {
+    transition: transform 0.3s;
+    height: 100%; /* Para que todas las tarjetas midan lo mismo */
+    color: white; /* Texto blanco porque el fondo es oscuro */
+    border: none; /* Quitamos bordes por defecto */
+}
+
+.card-project:hover {
+    transform: scale(1.05); /* Efecto de "zoom" */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Sombra al levantar */
+}
+
+/* Ajuste para las imágenes de los proyectos */
+.card-img-top {
+    height: 200px; /* Altura fija */
+    object-fit: cover; /* Recorta la imagen para que llene el espacio sin deformarse */
+}
+
+/* Ajustes opcionales para el texto de descripción */
+.lead {
+    font-size: 1rem;
+    line-height: 1.6;
+}
