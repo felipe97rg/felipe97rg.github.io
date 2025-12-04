@@ -21,32 +21,28 @@
         
         <header class="row align-items-center mb-5">
             <div class="col-md-4 text-center mb-4 mb-md-0">
-                <img src="./assets/gear.png" alt="Profile Logo" class="img-fluid" style="max-width: 80%; height: auto;"> 
+                <img src="./assets/gear.png" alt="Profile Logo" class="img-fluid" style="max-width: 250px; height: auto;"> 
             </div>
 
             <div class="col-md-8 p-4">
                 <h1>Hi, I am <strong>Juan Felipe Rodriguez</strong></h1>
-                <h3>Python Developer & Petroleum Engineer</h3>
+                <h3>Python Developer & Data Engineer</h3>
                 
                 <p class="lead mt-3">
                     Python developer with professional training as a Petroleum Engineer. Experienced in data
-                    science and engineering projects, performing ETL processes, exploratory data analysis, and 
-                    implementing machine learning algorithms. Skilled in cloud workflow design, SQL/NoSQL databases, 
-                    and Object-Oriented Programming. I bring a collaborative approach, thriving under pressure 
-                    to deliver robust technological solutions.
+                    science, ETL processes, and Machine Learning. I specialize in cloud workflow design (GCP), 
+                    Deep Learning implementation (PyTorch), and building robust predictive models. 
+                    I bring a collaborative approach, thriving under pressure to deliver technological solutions.
                 </p>
                 
                 <div class="mt-4 d-flex align-items-center flex-wrap gap-3">
-                    <div>
-                        <a href="https://github.com/felipe97rg" class="social-button" target="_blank">
-                            <i class="fa-brands fa-github fa-2xl"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/juan-felipe-rodriguez-granados-558673186" class="social-button" target="_blank">
-                            <i class="fa-brands fa-linkedin fa-2xl"></i>
-                        </a>
-                    </div>
-
-                    <a class="btn btn-primary" href="./assets/CV_Juan_Felipe_Rodriguez DS.pdf" target="_blank">
+                    <a href="https://github.com/felipe97rg" class="social-button" target="_blank">
+                        <i class="fa-brands fa-github fa-2xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/juan-felipe-rodriguez-granados-558673186" class="social-button" target="_blank">
+                        <i class="fa-brands fa-linkedin fa-2xl"></i>
+                    </a>
+                    <a class="btn btn-primary" href="./assets/CV_Juan_Felipe_Rodriguez.pdf" target="_blank">
                         Download CV
                     </a>
                 </div>
@@ -56,27 +52,80 @@
         <hr>
 
         <div class="row my-5">
-            <h3 class="text-center mb-5">My Projects</h3>
+            <h3 class="text-center mb-5">Featured Projects</h3>
             
             <div class="col-md-4 mb-4">
                 <div class="card card-project">
-                    <img src="./assets/brain_mri.jpg" class="card-img-top" alt="Brain Tumor Project" onerror="this.src='https://via.placeholder.com/300x220?text=Deep+Learning'"/>
-                    
+                    <img src="./assets/steam_project.jpg" class="card-img-top" onerror="this.src='https://via.placeholder.com/300x200/2a2a2a/FFFFFF?text=MLOps+System'"/>
                     <div class="card-body d-flex flex-column">
-                        <h2>Brain Tumor Classification</h2>
-                        <p class="flex-grow-1">Deep learning project using <strong>PyTorch</strong> to classify brain tumor MRI images. Implemented neural networks in Jupyter Notebooks for high-accuracy medical image analysis.</p>
-                        
-                        <div class="mt-auto">
-                            <a href="https://github.com/felipe97rg" class="btn btn-light" target="__blank">View Code</a>
-                        </div>
+                        <h2>Video Game Rec System</h2>
+                        <p class="flex-grow-1"><strong>MLOps Project:</strong> End-to-end recommendation system using Steam data. Handled extraction, ETL processing, and API deployment to serve model predictions in production.</p>
+                        <div class="mt-auto"><a href="https://github.com/felipe97rg" class="btn btn-outline-light btn-sm" target="__blank">View Code</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card card-project">
+                    <img src="./assets/gcp_food.png" class="card-img-top" onerror="this.src='https://via.placeholder.com/300x200/2a2a2a/FFFFFF?text=GCP+Big+Data'"/>
+                    <div class="card-body d-flex flex-column">
+                        <h2>Healthy Food Pipeline</h2>
+                        <p class="flex-grow-1"><strong>Big Data & Cloud:</strong> Developed a data pipeline on Google Cloud Platform (GCP) using Cloud Functions, BigQuery, and Cloud Storage to feed a ML model for food recommendations.</p>
+                        <div class="mt-auto"><a href="https://github.com/felipe97rg" class="btn btn-outline-light btn-sm" target="__blank">View Code</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card card-project">
+                    <img src="./assets/brain_mri.jpg" class="card-img-top" onerror="this.src='https://via.placeholder.com/300x200/2a2a2a/FFFFFF?text=Computer+Vision'"/>
+                    <div class="card-body d-flex flex-column">
+                        <h2>Medical Imaging (CNN)</h2>
+                        <p class="flex-grow-1"><strong>Computer Vision:</strong> Developed a Convolutional Neural Network (CNN) architecture using <strong>PyTorch</strong> to classify brain MRI images for tumor detection and diagnosis.</p>
+                        <div class="mt-auto"><a href="https://github.com/felipe97rg" class="btn btn-outline-light btn-sm" target="__blank">View Code</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card card-project">
+                    <img src="./assets/nlp_text.jpg" class="card-img-top" onerror="this.src='https://via.placeholder.com/300x200/2a2a2a/FFFFFF?text=NLP+Analysis'"/>
+                    <div class="card-body d-flex flex-column">
+                        <h2>Scientific Text Analysis</h2>
+                        <p class="flex-grow-1"><strong>NLP:</strong> Implemented a Recurrent Neural Network (RNN) using <strong>PyTorch</strong> to classify and categorize scientific articles based on their abstract content automatically.</p>
+                        <div class="mt-auto"><a href="https://github.com/felipe97rg" class="btn btn-outline-light btn-sm" target="__blank">View Code</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card card-project">
+                    <img src="./assets/water_quality.png" class="card-img-top" onerror="this.src='https://via.placeholder.com/300x200/2a2a2a/FFFFFF?text=Classification'"/>
+                    <div class="card-body d-flex flex-column">
+                        <h2>Water Potability</h2>
+                        <p class="flex-grow-1"><strong>Classification System:</strong> Built a multiclass system to assess water quality using Decision Trees and K-Nearest Neighbors (KNN) with scikit-learn.</p>
+                        <div class="mt-auto"><a href="https://github.com/felipe97rg" class="btn btn-outline-light btn-sm" target="__blank">View Code</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card card-project">
+                    <img src="./assets/bicycle_rent.jpg" class="card-img-top" onerror="this.src='https://via.placeholder.com/300x200/2a2a2a/FFFFFF?text=Regression'"/>
+                    <div class="card-body d-flex flex-column">
+                        <h2>Bicycle Rental Prediction</h2>
+                        <p class="flex-grow-1"><strong>Predictive Modeling:</strong> Engineered a model to forecast demand using Polynomial Regression and Regularized models (Lasso) to analyze external variables.</p>
+                        <div class="mt-auto"><a href="https://github.com/felipe97rg" class="btn btn-outline-light btn-sm" target="__blank">View Code</a></div>
                     </div>
                 </div>
             </div>
 
         </div> <footer class="text-center pb-4 text-muted">
-            <small>&copy; 2025 Juan Felipe Rodriguez. Built with HTML & CSS.</small>
+            <small>&copy; 2025 Juan Felipe Rodriguez. Powered by Github Pages.</small>
         </footer>
 
-    </div> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
