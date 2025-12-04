@@ -1,33 +1,37 @@
-/* --- Variables CSS --- */
-/* Definimos la paleta de colores aquí para que sea fácil cambiarla luego */
+/* style.css - DARK MODE EDITION */
+
 :root {
-    --primary-color: #2563eb;    /* Un azul moderno y vibrante */
-    --secondary-color: #1e40af;  /* Un azul más oscuro para efectos hover */
-    --bg-body: #f8fafc;          /* Fondo gris muy claro, no blanco puro */
-    --text-main: #1e293b;        /* Color de texto principal (gris oscuro) */
-    --text-muted: #64748b;       /* Color para texto secundario */
-    --card-bg: #ffffff;          /* Fondo blanco puro para las tarjetas */
-    --shadow-soft: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); /* Sombra moderna y suave */
-    --shadow-hover: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04); /* Sombra más fuerte al pasar el mouse */
+    /* Paleta Oscura "Cyberpunk/Professional" */
+    --primary-color: #3b82f6;    /* Azul brillante */
+    --secondary-color: #60a5fa;  /* Azul más claro */
+    --bg-body: #0f172a;          /* Fondo muy oscuro (Dark Slate) */
+    --text-main: #f8fafc;        /* Texto casi blanco */
+    --text-muted: #94a3b8;       /* Gris azulado para textos secundarios */
+    --card-bg: #1e293b;          /* Fondo de tarjetas (un poco más claro que el body) */
+    
+    /* Sombras adaptadas a modo oscuro */
+    --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 10px 10px -5px rgba(0, 0, 0, 0.5);
 }
 
-/* --- Ajustes Generales y Tipografía --- */
 body {
-    font-family: 'Inter', sans-serif; /* Fuente moderna para el cuerpo */
+    font-family: 'Inter', sans-serif;
     background-color: var(--bg-body);
     color: var(--text-main);
-    padding-top: 80px; /* Más espacio arriba */
-    line-height: 1.7; /* Mejor lectura */
+    padding-top: 80px;
+    line-height: 1.7;
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Poppins', sans-serif; /* Fuente fuerte para títulos */
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
     color: var(--text-main);
 }
 
 h1 strong {
-    color: var(--primary-color); /* Resaltamos tu nombre con el color principal */
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Efecto degradado en el nombre */
 }
 
 .lead {
@@ -36,107 +40,102 @@ h1 strong {
 }
 
 hr {
-    opacity: 0.1; /* Línea separadora muy sutil */
+    border-color: var(--text-muted);
+    opacity: 0.2;
     margin: 4rem 0;
 }
 
 /* --- Header Section --- */
-/* Hacemos la imagen principal más atractiva */
 header img.img-fluid {
-    border-radius: 24px; /* Bordes muy redondeados */
+    border-radius: 24px;
     box-shadow: var(--shadow-soft);
-    transition: transform 0.3s ease;
+    border: 2px solid var(--card-bg); /* Borde sutil para separar del fondo */
 }
 
-header img.img-fluid:hover {
-    transform: scale(1.02);
-}
-
-/* --- Botones Modernos --- */
-/* Rediseñamos los iconos sociales */
+/* --- Botones --- */
 .social-button {
     margin-right: 20px;
     color: var(--text-muted);
     text-decoration: none;
     transition: all 0.3s ease;
-    display: inline-block;
 }
 
 .social-button:hover {
     color: var(--primary-color);
-    transform: translateY(-3px); /* Pequeño salto al pasar el mouse */
+    transform: translateY(-3px);
 }
 
-/* Botón principal (CV) estilo "píldora" con degradado */
 .btn-primary {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, #2563eb 100%);
     border: none;
-    border-radius: 50px !important; /* Forma de píldora */
+    border-radius: 50px !important;
     padding: 12px 30px;
     font-weight: 600;
-    font-family: 'Poppins', sans-serif;
-    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4); /* Sombra de color azul */
-    transition: all 0.3s ease;
+    color: white;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4); 
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.5);
-    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.6);
 }
 
-/* --- Tarjetas de Proyectos (El cambio más grande) --- */
+/* --- Tarjetas de Proyectos --- */
 .card-project {
-    background-color: var(--card-bg); /* Fondo blanco */
-    border: none; /* Sin bordes duros */
-    border-radius: 20px; /* Esquinas muy redondeadas */
-    box-shadow: var(--shadow-soft); /* Sombra suave en lugar de color de fondo */
-    overflow: hidden; /* Para que la imagen respete el borde redondeado */
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Transición elástica moderna */
+    background-color: var(--card-bg);
+    border: 1px solid rgba(255,255,255,0.05); /* Borde muy sutil */
+    border-radius: 20px;
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+    transition: all 0.4s ease;
     height: 100%;
+    color: var(--text-main);
 }
 
 .card-project:hover {
-    transform: translateY(-12px); /* Se levanta considerablemente */
+    transform: translateY(-10px);
     box-shadow: var(--shadow-hover);
+    border-color: var(--primary-color); /* El borde se ilumina al pasar el mouse */
 }
 
 .card-img-top {
-    height: 220px;
+    height: 200px;
     object-fit: cover;
-    border-bottom: 1px solid rgba(0,0,0,0.05); /* Separador sutil */
+    opacity: 0.9; /* Imagen un poco apagada para que no brille tanto */
+    transition: opacity 0.3s;
+}
+
+.card-project:hover .card-img-top {
+    opacity: 1; /* Imagen brilla full al pasar el mouse */
 }
 
 .card-project .card-body {
-    padding: 2rem;
-    text-align: left; /* Alineación a la izquierda se ve más profesional */
+    padding: 1.5rem;
 }
 
 .card-project h2 {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: 0.8rem;
+    color: var(--secondary-color); /* Títulos de proyectos en azul claro */
 }
 
 .card-project p {
     color: var(--text-muted);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     margin-bottom: 1.5rem;
 }
 
-/* Botón dentro de las tarjetas (Estilo outline) */
-.card-project .btn-light {
-    background-color: transparent;
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color) !important;
-    border-radius: 50px !important;
-    padding: 8px 24px;
-    font-weight: 600;
-    font-family: 'Poppins', sans-serif;
-    transition: all 0.3s ease;
+/* Botón "View Code" oscuro */
+.card-project .btn-outline-light {
+    border-color: var(--text-muted);
+    color: var(--text-muted);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    padding: 5px 20px;
 }
 
-.card-project .btn-light:hover {
+.card-project .btn-outline-light:hover {
     background-color: var(--primary-color);
-    color: white !important;
+    border-color: var(--primary-color);
+    color: white;
 }
