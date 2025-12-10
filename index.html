@@ -1,49 +1,69 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juan Felipe Rodriguez - Portfolio</title>
+    <title>Juan Felipe Rodriguez | Data Scientist & AI Master's Student</title>
+    <meta name="description" content="Portfolio of Juan Felipe Rodriguez - Data Scientist, Petroleum Engineer and AI Master's Student specializing in Machine Learning, ETL, and Cloud.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">JF<span class="text-primary">.</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="btn btn-outline-primary ms-lg-3 px-4 rounded-pill btn-sm" href="mailto:ing.juanfeliperodriguez@gmail.com">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container content-wrapper">
         
-        <header class="row align-items-center mb-5">
-            <div class="col-md-4 text-center mb-4 mb-md-0">
-                <img src="./assets/gear.png" alt="Profile Logo" class="img-fluid" style="max-width: 250px; height: auto;"> 
+        <header id="about" class="row align-items-center mb-5 section-padding">
+            <div class="col-lg-4 text-center mb-4 mb-lg-0">
+                <div class="profile-img-wrapper">
+                    <img src="./assets/gear.png" alt="Juan Felipe Rodriguez" class="img-fluid profile-img"> 
+                </div>
             </div>
 
-            <div class="col-md-8 p-4">
-                <h1>Hi, I am <strong>Juan Felipe Rodriguez</strong></h1>
-                <h3>Data Scientist - Python Developer</h3>
+            <div class="col-lg-8 p-4">
+                <div class="badge bg-primary bg-opacity-10 text-primary mb-2 px-3 py-2 rounded-pill">AI Master's Student @ UniAndes</div>
+                <h1 class="display-4 fw-bold">Hi, I am <strong>Juan Felipe Rodriguez</strong></h1>
+                <h3 class="text-secondary mb-4">Data Scientist & Petroleum Engineer</h3>
                 
-                <p class="lead mt-3">
-                    Python developer with professional training as a Petroleum Engineer. Experienced in data
-                    science, ETL processes, and Machine Learning. I specialize in cloud workflow design (GCP), 
-                    Deep Learning implementation (PyTorch), and building robust predictive models. 
-                    I bring a collaborative approach, thriving under pressure to deliver technological solutions.
+                <p class="lead">
+                    Data Scientist currently pursuing a <strong>Master's in Artificial Intelligence</strong>. 
+                    I combine my background in Petroleum Engineering with advanced expertise in Python, ETL processes, and Deep Learning. 
+                    Currently driving data solutions at <strong>Cenyt</strong>, specializing in predictive modeling and cloud workflows.
                 </p>
                 
                 <div class="mt-4 d-flex align-items-center flex-wrap gap-3">
-                    <a href="https://github.com/felipe97rg" class="social-button" target="_blank">
+                    <a href="https://github.com/felipe97rg" class="social-button" target="_blank" title="GitHub">
                         <i class="fa-brands fa-github fa-2xl"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/juan-felipe-rodriguez-granados-558673186" class="social-button" target="_blank">
+                    <a href="https://www.linkedin.com/in/juan-felipe-rodriguez-granados-558673186" class="social-button" target="_blank" title="LinkedIn">
                         <i class="fa-brands fa-linkedin fa-2xl"></i>
                     </a>
-                    <a class="btn btn-primary" href=".assets/CV_Juan_Felipe_Rodriguez DS.pdf" target="_blank">
-                        Download CV
+                    <a class="btn btn-primary btn-lg shadow-lg" href="./assets/CV_Juan_Felipe_Rodriguez DS.pdf" target="_blank">
+                        <i class="fa-solid fa-download me-2"></i>Download CV
                     </a>
                 </div>
             </div>
@@ -51,77 +71,178 @@
 
         <hr>
 
-        <div class="row my-5">
+        <section id="experience" class="my-5">
+            <h3 class="text-center mb-5"><i class="fa-solid fa-briefcase me-2 text-primary"></i>Professional Experience</h3>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="card card-project p-4">
+                        <div class="d-flex flex-column flex-md-row justify-content-between align-items-start mb-3">
+                            <div>
+                                <h4 class="mb-1">Data Scientist</h4>
+                                <h5 class="text-primary">Cenyt - Engineers & Consultants</h5>
+                            </div>
+                            <span class="badge bg-secondary">May 2024 - Present</span>
+                        </div>
+                        <p class="text-muted">Bogotá, Colombia</p>
+                        <ul class="text-muted">
+                            <li>Developing innovative products to find data solutions, including robust <strong>data cleaning processes</strong>.</li>
+                            <li>Designing and implementing <strong>Machine Learning & Deep Learning models</strong> using Python.</li>
+                            <li>Managing and creating <strong>SQL and NoSQL databases</strong> for optimized data storage.</li>
+                            <li>Creating comprehensive reports in <strong>Power BI</strong> to analyze business problems within the Microsoft environment.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="my-5">
+            <h3 class="text-center mb-5">Tech Stack & Tools</h3>
+            <div class="row text-center justify-content-center g-4">
+                <div class="col-6 col-md-2">
+                    <div class="skill-card p-3">
+                        <i class="fa-brands fa-python fa-3x text-primary mb-2"></i>
+                        <p class="mb-0">Python</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="skill-card p-3">
+                        <i class="fa-solid fa-brain fa-3x text-danger mb-2"></i>
+                        <p class="mb-0">PyTorch / TF</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="skill-card p-3">
+                        <i class="fa-solid fa-database fa-3x text-info mb-2"></i>
+                        <p class="mb-0">SQL / NoSQL</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="skill-card p-3">
+                        <i class="fa-brands fa-aws fa-3x text-warning mb-2"></i>
+                        <p class="mb-0">AWS / GCP</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="skill-card p-3">
+                        <i class="fa-solid fa-chart-simple fa-3x text-success mb-2"></i>
+                        <p class="mb-0">Power BI</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="skill-card p-3">
+                        <i class="fa-brands fa-docker fa-3x text-primary mb-2"></i>
+                        <p class="mb-0">Docker</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <div id="projects" class="row my-5">
             <h3 class="text-center mb-5">Featured Projects</h3>
             
             <div class="col-md-4 mb-4">
                 <div class="card card-project">
-                    <img src=".assets\steam_projectsteam_project.jpg" class="card-img-top" onerror="this.src='https://github.com/felipe97rg/Sistema-de-Recomendacion-Steam'"/>
+                    <img src="./assets/steam_project.jpg" class="card-img-top" onerror="this.src='https://github.com/felipe97rg/Sistema-de-Recomendacion-Steam/raw/main/src/assets/steam.png'"/>
                     <div class="card-body d-flex flex-column">
                         <h2>Video Game Rec System</h2>
+                        <div class="mb-3">
+                            <span class="badge-tech">MLOps</span>
+                            <span class="badge-tech">FastAPI</span>
+                            <span class="badge-tech">Render</span>
+                        </div>
                         <p class="flex-grow-1"><strong>MLOps Project:</strong> End-to-end recommendation system using Steam data. Handled extraction, ETL processing, and API deployment to serve model predictions in production.</p>
-                        <div class="mt-auto"><a href="https://github.com/felipe97rg/Sistema-de-Recomendacion-Steam" class="btn btn-outline-light btn-sm" target="__blank">Visit</a></div>
+                        <div class="mt-auto"><a href="https://github.com/felipe97rg/Sistema-de-Recomendacion-Steam" class="btn btn-outline-light btn-sm w-100" target="__blank"><i class="fa-brands fa-github me-2"></i>View Code</a></div>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-4 mb-4">
                 <div class="card card-project">
-                    <img src="./assets/gcp_food.png" class="card-img-top" onerror="this.src='https://github.com/felipe97rg/PF_Yelp_Google'"/>
+                    <img src="./assets/gcp_food.png" class="card-img-top" onerror="this.src='https://miro.medium.com/v2/resize:fit:1400/1*J2x1M7XqfP1uQZ1p3v1q1Q.jpeg'"/>
                     <div class="card-body d-flex flex-column">
                         <h2>Healthy Food Pipeline</h2>
-                        <p class="flex-grow-1"><strong>Big Data & Cloud:</strong> Developed a data pipeline on Google Cloud Platform (GCP) using Cloud Functions, BigQuery, and Cloud Storage to feed a ML model for food recommendations.</p>
-                        <div class="mt-auto"><a href="https://github.com/felipe97rg/PF_Yelp_Google" class="btn btn-outline-light btn-sm" target="__blank">Visit</a></div>
+                        <div class="mb-3">
+                            <span class="badge-tech">Google Cloud</span>
+                            <span class="badge-tech">BigQuery</span>
+                            <span class="badge-tech">Cloud Functions</span>
+                        </div>
+                        <p class="flex-grow-1"><strong>Big Data & Cloud:</strong> Developed a data pipeline on GCP using Cloud Functions and BigQuery to feed a ML model for food recommendations.</p>
+                        <div class="mt-auto"><a href="https://github.com/felipe97rg/PF_Yelp_Google" class="btn btn-outline-light btn-sm w-100" target="__blank"><i class="fa-brands fa-github me-2"></i>View Code</a></div>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-4 mb-4">
                 <div class="card card-project">
-                    <img src="./assets/brain_mri.jpg" class="card-img-top" onerror="this.src='https://via.placeholder.com/300x200/2a2a2a/FFFFFF?text=Computer+Vision'"/>
+                    <img src="./assets/brain_mri.jpg" class="card-img-top" onerror="this.src='https://miro.medium.com/v2/resize:fit:1200/1*m_S9bZgTjZZqX8q1qQ.jpeg'"/>
                     <div class="card-body d-flex flex-column">
                         <h2>Medical Imaging (CNN)</h2>
-                        <p class="flex-grow-1"><strong>Computer Vision:</strong> Developed a Convolutional Neural Network (CNN) architecture using <strong>PyTorch</strong> to classify brain MRI images for tumor detection and diagnosis.</p>
-                        <div class="mt-auto"><a href="https://github.com/felipe97rg" class="btn btn-outline-light btn-sm" target="__blank">View Code</a></div>
+                        <div class="mb-3">
+                            <span class="badge-tech">PyTorch</span>
+                            <span class="badge-tech">CNN</span>
+                            <span class="badge-tech">Computer Vision</span>
+                        </div>
+                        <p class="flex-grow-1"><strong>Deep Learning:</strong> Developed a CNN architecture to classify brain MRI images for tumor detection and diagnosis.</p>
+                        <div class="mt-auto"><a href="https://github.com/felipe97rg" class="btn btn-outline-light btn-sm w-100" target="__blank"><i class="fa-brands fa-github me-2"></i>View Code</a></div>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-4 mb-4">
                 <div class="card card-project">
-                    <img src="./assets/nlp_text.jpg" class="card-img-top" onerror="this.src='https://via.placeholder.com/300x200/2a2a2a/FFFFFF?text=NLP+Analysis'"/>
+                    <img src="./assets/nlp_text.jpg" class="card-img-top" onerror="this.src='https://miro.medium.com/v2/resize:fit:1200/1*m_S9bZgTjZZqX8q1qQ.jpeg'"/>
                     <div class="card-body d-flex flex-column">
                         <h2>Scientific Text Analysis</h2>
-                        <p class="flex-grow-1"><strong>NLP:</strong> Implemented a Recurrent Neural Network (RNN) using <strong>PyTorch</strong> to classify and categorize scientific articles based on their abstract content automatically.</p>
-                        <div class="mt-auto"><a href="https://github.com/felipe97rg" class="btn btn-outline-light btn-sm" target="__blank">View Code</a></div>
+                        <div class="mb-3">
+                            <span class="badge-tech">NLP</span>
+                            <span class="badge-tech">RNN</span>
+                            <span class="badge-tech">PyTorch</span>
+                        </div>
+                        <p class="flex-grow-1"><strong>Natural Language Processing:</strong> Implemented a Recurrent Neural Network (RNN) to classify and categorize scientific articles based on their abstract content.</p>
+                        <div class="mt-auto"><a href="https://github.com/felipe97rg" class="btn btn-outline-light btn-sm w-100" target="__blank"><i class="fa-brands fa-github me-2"></i>View Code</a></div>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-4 mb-4">
                 <div class="card card-project">
-                    <img src="./assets/water_quality.png" class="card-img-top" onerror="this.src='https://via.placeholder.com/300x200/2a2a2a/FFFFFF?text=Classification'"/>
+                    <img src="./assets/water_quality.png" class="card-img-top" onerror="this.src='https://miro.medium.com/v2/resize:fit:1200/1*m_S9bZgTjZZqX8q1qQ.jpeg'"/>
                     <div class="card-body d-flex flex-column">
                         <h2>Water Potability</h2>
-                        <p class="flex-grow-1"><strong>Classification System:</strong> Built a multiclass system to assess water quality using Decision Trees and K-Nearest Neighbors (KNN) with scikit-learn.</p>
-                        <div class="mt-auto"><a href="https://github.com/felipe97rg" class="btn btn-outline-light btn-sm" target="__blank">View Code</a></div>
+                        <div class="mb-3">
+                            <span class="badge-tech">Scikit-learn</span>
+                            <span class="badge-tech">KNN</span>
+                            <span class="badge-tech">Decision Trees</span>
+                        </div>
+                        <p class="flex-grow-1"><strong>Classification System:</strong> Built a multiclass system to assess water quality using Decision Trees and K-Nearest Neighbors (KNN).</p>
+                        <div class="mt-auto"><a href="https://github.com/felipe97rg" class="btn btn-outline-light btn-sm w-100" target="__blank"><i class="fa-brands fa-github me-2"></i>View Code</a></div>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-4 mb-4">
                 <div class="card card-project">
-                    <img src="./assets/bicycle_rent.jpg" class="card-img-top" onerror="this.src='https://via.placeholder.com/300x200/2a2a2a/FFFFFF?text=Regression'"/>
+                    <img src="./assets/bicycle_rent.jpg" class="card-img-top" onerror="this.src='https://miro.medium.com/v2/resize:fit:1200/1*m_S9bZgTjZZqX8q1qQ.jpeg'"/>
                     <div class="card-body d-flex flex-column">
                         <h2>Bicycle Rental Prediction</h2>
-                        <p class="flex-grow-1"><strong>Predictive Modeling:</strong> Engineered a model to forecast demand using Polynomial Regression and Regularized models (Lasso) to analyze external variables.</p>
-                        <div class="mt-auto"><a href="https://github.com/felipe97rg" class="btn btn-outline-light btn-sm" target="__blank">View Code</a></div>
+                        <div class="mb-3">
+                            <span class="badge-tech">Regression</span>
+                            <span class="badge-tech">Lasso</span>
+                            <span class="badge-tech">Scikit-learn</span>
+                        </div>
+                        <p class="flex-grow-1"><strong>Predictive Modeling:</strong> Engineered a model to forecast demand using Polynomial Regression and Regularized models (Lasso).</p>
+                        <div class="mt-auto"><a href="https://github.com/felipe97rg" class="btn btn-outline-light btn-sm w-100" target="__blank"><i class="fa-brands fa-github me-2"></i>View Code</a></div>
                     </div>
                 </div>
             </div>
 
-        </div> <footer class="text-center pb-4 text-muted">
-            <small>&copy; 2025 Juan Felipe Rodriguez. Powered by Github Pages.</small>
+        </div> 
+        
+        <footer class="text-center pb-4 pt-4 text-muted border-top border-secondary">
+            <small>&copy; 2025 Juan Felipe Rodriguez. Built with Bootstrap & Love.</small>
         </footer>
 
     </div>
