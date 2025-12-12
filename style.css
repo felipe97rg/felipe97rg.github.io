@@ -1,32 +1,34 @@
-/* style.css - PROFESSIONAL DARK MODE */
+/* style.css - STICKY STACKING EFFECT */
 
 :root {
     /* Paleta Oscura "Deep Space" */
-    --primary-color: #3b82f6;    /* Azul vibrante */
+    --primary-color: #3b82f6;
     --primary-hover: #2563eb;
-    --secondary-color: #93c5fd;  /* Azul pastel para acentos */
-    --bg-body: #0f172a;          /* Azul oscurísimo (casi negro) */
-    --bg-gradient: radial-gradient(circle at 50% 0%, #1e293b 0%, #0f172a 70%);
+    --secondary-color: #93c5fd;
+    --bg-body: #0f172a;
     
-    --text-main: #f1f5f9;        /* Blanco humo */
-    --text-muted: #94a3b8;       /* Gris azulado */
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
     
-    --card-bg: #1e293b;          /* Fondo de tarjetas */
+    --card-bg: #1e293b;
     --card-border: rgba(255, 255, 255, 0.05);
     
-    /* Sombras Elevadas */
     --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
     --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
 }
 
-body {
+/* 1. RESET Y BASE */
+html, body {
+    margin: 0;
+    padding: 0;
+    /* Importante: Para sticky stacking necesitamos height auto y scroll nativo */
+    height: auto; 
+    overflow-x: hidden;
+    overflow-y: auto; 
     font-family: 'Inter', sans-serif;
-    background: var(--bg-gradient);
-    background-attachment: fixed; /* Efecto Parallax sutil */
+    background-color: var(--bg-body);
     color: var(--text-main);
-    padding-top: 80px;
     line-height: 1.7;
-    min-height: 100vh;
 }
 
 h1, h2, h3, h4, h5 {
@@ -47,60 +49,25 @@ h1 strong {
     font-size: 1.15rem;
 }
 
-hr {
-    border-color: var(--text-muted);
-    opacity: 0.1;
-    margin: 4rem 0;
-}
-
-/* --- Navbar (Glassmorphism) --- */
+/* --- NAVBAR --- */
 .navbar {
-    background-color: rgba(15, 23, 42, 0.85); /* Semitransparente */
-    backdrop-filter: blur(12px); /* Efecto vidrio borroso */
+    background-color: rgba(15, 23, 42, 0.95); /* Más opaco para que no moleste al scroll */
+    backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     transition: all 0.3s ease;
+    z-index: 1000; /* Siempre encima de todo */
 }
 
-.navbar-brand {
-    font-size: 1.5rem;
-    letter-spacing: -1px;
-}
+.navbar-brand { font-size: 1.5rem; letter-spacing: -1px; }
+.nav-link { color: var(--text-muted) !important; font-weight: 500; transition: color 0.3s; }
+.nav-link:hover, .nav-link.active { color: var(--primary-color) !important; }
 
-.nav-link {
-    color: var(--text-muted) !important;
-    font-weight: 500;
-    transition: color 0.3s;
-}
+/* --- COMPONENTES (Botones, Imagen, Cards) --- */
+.profile-img-wrapper { transition: transform 0.3s ease; }
+.profile-img-wrapper:hover { transform: scale(1.02); }
 
-.nav-link:hover, .nav-link.active {
-    color: var(--primary-color) !important;
-}
-
-/* --- Profile Image --- */
-.profile-img {
-    border-radius: 20px;
-    box-shadow: var(--shadow-soft);
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    max-width: 280px;
-    height: auto;
-    transition: transform 0.3s ease;
-}
-
-.profile-img:hover {
-    transform: scale(1.02);
-}
-
-/* --- Botones --- */
-.social-button {
-    color: var(--text-muted);
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.social-button:hover {
-    color: var(--primary-color);
-    transform: translateY(-3px);
-}
+.social-button { color: var(--text-muted); text-decoration: none; transition: all 0.3s ease; }
+.social-button:hover { color: var(--primary-color); transform: translateY(-3px); }
 
 .btn-primary {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-hover) 100%);
@@ -111,13 +78,8 @@ hr {
     box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
     transition: all 0.3s;
 }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5); }
 
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5);
-}
-
-/* --- Cards (Experience & Projects) --- */
 .card-project {
     background-color: var(--card-bg);
     border: 1px solid var(--card-border);
@@ -128,85 +90,87 @@ hr {
     height: 100%;
     color: var(--text-main);
 }
+.card-project:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); border-color: var(--primary-color); }
 
-.card-project:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-hover);
-    border-color: var(--primary-color);
-}
+.card-img-top { object-fit: cover; opacity: 0.8; transition: opacity 0.3s; border-bottom: 1px solid var(--card-border); }
+.card-project:hover .card-img-top { opacity: 1; }
 
-.card-img-top {
-    height: 180px;
-    object-fit: cover;
-    opacity: 0.8;
-    transition: opacity 0.3s;
-    border-bottom: 1px solid var(--card-border);
-}
+.card-body { padding: 1.5rem; }
+.card-project h2, .card-project h5 { color: var(--secondary-color); }
+.card-project p, .card-project li { color: var(--text-muted); font-size: 0.9rem; }
 
-.card-project:hover .card-img-top {
-    opacity: 1;
-}
-
-.card-body {
-    padding: 1.5rem;
-}
-
-.card-project h2 {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-    color: var(--secondary-color);
-}
-
-.card-project p, .card-project li {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-}
-
-/* --- Badges Técnicos --- */
 .badge-tech {
     display: inline-block;
-    padding: 4px 10px;
-    margin-right: 4px;
-    margin-bottom: 6px;
-    font-size: 0.75rem;
-    font-weight: 600;
+    padding: 2px 8px; margin-right: 4px; margin-bottom: 4px;
+    font-size: 0.7rem; font-weight: 600;
     color: var(--secondary-color);
     background-color: rgba(59, 130, 246, 0.1);
     border: 1px solid rgba(59, 130, 246, 0.2);
     border-radius: 50px;
 }
 
-/* --- Skills Section --- */
 .skill-card {
-    background-color: rgba(30, 41, 59, 0.5); /* Más transparente */
-    border-radius: 15px;
-    border: 1px solid var(--card-border);
+    background-color: rgba(30, 41, 59, 0.8); /* Fondo más solido */
+    border-radius: 15px; border: 1px solid var(--card-border);
     transition: all 0.3s ease;
 }
-
 .skill-card:hover {
-    background-color: var(--card-bg);
-    transform: translateY(-5px);
-    border-color: var(--primary-color);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    background-color: var(--card-bg); transform: translateY(-5px);
+    border-color: var(--primary-color); box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+.skill-card i { display: block; margin-bottom: 5px; }
+
+
+/* --- LOGICA DE STICKY STACKING (NUEVO) --- */
+
+/* El contenedor solo envuelve, no necesita propiedades especiales de scroll */
+.snap-container {
+    width: 100%;
+    position: relative;
 }
 
-.skill-card i {
-    display: block;
-    margin-bottom: 10px;
+/* Cada sección se vuelve pegajosa al llegar arriba */
+.full-page-section {
+    position: sticky;
+    top: 0;
+    height: 100vh; /* Altura completa obligatoria para el efecto */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrar contenido verticalmente */
+    
+    /* Borde superior sutil para separar las tarjetas visualmente al apilarse */
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.5); 
+    border-top: 1px solid rgba(255,255,255,0.05);
+    
+    /* Aseguramos que el contenido no se desborde */
+    overflow: hidden;
 }
 
-/* --- Scrollbar Customization --- */
-::-webkit-scrollbar {
-    width: 8px;
+
+/* --- FONDOS DE SECCIONES --- */
+/* Usamos fondos más sólidos para que tapen bien a la sección anterior */
+
+#home {
+    background-color: var(--bg-body);
+    background-image: radial-gradient(circle at 80% 30%, rgba(59, 130, 246, 0.15) 0%, #0f172a 70%);
+    z-index: 10;
 }
-::-webkit-scrollbar-track {
-    background: var(--bg-body);
+
+#exp-skills {
+    background-color: #0f172a; /* Fondo base sólido */
+    background-image: radial-gradient(circle at 10% 50%, rgba(147, 197, 253, 0.1) 0%, #0f172a 60%);
+    z-index: 20; /* Mayor Z-index para asegurar que tape al anterior */
 }
-::-webkit-scrollbar-thumb {
-    background: #334155;
-    border-radius: 4px;
+
+#projects {
+    background-color: #0f172a;
+    background-image: radial-gradient(ellipse at 50% 0%, rgba(59, 130, 246, 0.15) 0%, #0f172a 80%);
+    z-index: 30;
 }
-::-webkit-scrollbar-thumb:hover {
-    background: var(--primary-color);
-}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg-body); }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: var(--primary-color); }
