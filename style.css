@@ -6,32 +6,36 @@
     --primary-hover: #2563eb;
     --secondary-color: #93c5fd;
     --bg-body: #0f172a;
-    
+
     --text-main: #f1f5f9;
     --text-muted: #94a3b8;
-    
+
     --card-bg: #1e293b;
-    --card-border: rgba(255, 255, 255, 0.05);
-    
+    --card-border: rgba(255, 255, 255, 0.06);
+
     --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
     --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+
+    --nav-height: 72px;
 }
 
 /* 1. RESET Y BASE */
+/* overflow-x en html se propaga al viewport; en body usamos "clip"
+   porque "hidden" lo convierte en contenedor de scroll y rompe el sticky. */
+html { overflow-x: hidden; }
+body { overflow-x: clip; }
+
 html, body {
     margin: 0;
     padding: 0;
-    /* Importante: Para sticky stacking necesitamos height auto y scroll nativo */
-    height: auto; 
-    overflow-x: hidden;
-    overflow-y: auto; 
+    height: auto;
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-body);
     color: var(--text-main);
     line-height: 1.7;
 }
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     color: var(--text-main);
@@ -40,30 +44,86 @@ h1, h2, h3, h4, h5 {
 h1 strong {
     background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+    font-weight: 600;
+    color: var(--text-muted);
 }
 
 .lead {
     color: var(--text-muted);
     font-weight: 300;
-    font-size: 1.15rem;
+    font-size: 1.08rem;
+}
+.lead strong { color: var(--text-main); font-weight: 500; }
+
+.badge-wrap { white-space: normal; line-height: 1.4; }
+
+.section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+.section-subtitle {
+    color: var(--text-muted);
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* --- NAVBAR --- */
 .navbar {
-    background-color: rgba(15, 23, 42, 0.95); /* Más opaco para que no moleste al scroll */
+    background-color: rgba(15, 23, 42, 0.95);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     transition: all 0.3s ease;
-    z-index: 1000; /* Siempre encima de todo */
+    z-index: 1000;
 }
 
 .navbar-brand { font-size: 1.5rem; letter-spacing: -1px; }
 .nav-link { color: var(--text-muted) !important; font-weight: 500; transition: color 0.3s; }
 .nav-link:hover, .nav-link.active { color: var(--primary-color) !important; }
 
+/* Language switch */
+.lang-toggle {
+    display: inline-flex;
+    padding: 3px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.lang-btn {
+    border: 0;
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 4px 12px;
+    border-radius: 50px;
+    transition: all 0.2s ease;
+}
+.lang-btn:hover { color: var(--text-main); }
+.lang-btn.active {
+    background: var(--primary-color);
+    color: #fff;
+}
+
 /* --- COMPONENTES (Botones, Imagen, Cards) --- */
-.profile-img-wrapper { transition: transform 0.3s ease; }
+.profile-img-wrapper {
+    width: min(420px, 78vw);
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 24px;
+    margin: auto;
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+.profile-img-wrapper img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .profile-img-wrapper:hover { transform: scale(1.02); }
 
 .social-button { color: var(--text-muted); text-decoration: none; transition: all 0.3s ease; }
@@ -80,6 +140,25 @@ h1 strong {
 }
 .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5); }
 
+/* Hero stats */
+.stat-card {
+    height: 100%;
+    padding: 12px 10px;
+    border-radius: 14px;
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid var(--card-border);
+    text-align: center;
+}
+.stat-value {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--secondary-color);
+    line-height: 1.3;
+}
+.stat-label { font-size: 0.75rem; color: var(--text-muted); line-height: 1.35; }
+
+/* Cards */
 .card-project {
     background-color: var(--card-bg);
     border: 1px solid var(--card-border);
@@ -87,21 +166,74 @@ h1 strong {
     box-shadow: var(--shadow-soft);
     overflow: hidden;
     transition: all 0.4s ease;
-    height: 100%;
     color: var(--text-main);
 }
-.card-project:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); border-color: var(--primary-color); }
+.card-project:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: var(--primary-color); }
 
-.card-img-top { object-fit: cover; opacity: 0.8; transition: opacity 0.3s; border-bottom: 1px solid var(--card-border); }
+.card-img-top {
+    height: 130px;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+    border-bottom: 1px solid var(--card-border);
+}
 .card-project:hover .card-img-top { opacity: 1; }
 
+.card-cover {
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.35) 0%, rgba(15, 23, 42, 0.9) 75%);
+    border-bottom: 1px solid var(--card-border);
+}
+.card-cover img { height: 96px; width: auto; }
+
 .card-body { padding: 1.5rem; }
-.card-project h2, .card-project h5 { color: var(--secondary-color); }
+.card-project h2, .card-project h5, .card-project h4.card-title { color: var(--secondary-color); }
 .card-project p, .card-project li { color: var(--text-muted); font-size: 0.9rem; }
+.card-project p strong, .card-project li strong { color: var(--text-main); font-weight: 600; }
+
+.project-origin {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--primary-color);
+    margin-bottom: 0.35rem;
+}
+
+.project-origin-award { color: #f59e0b; }
+
+.award-link { color: var(--secondary-color); text-decoration: none; font-weight: 600; }
+.award-link:hover { color: var(--primary-color); }
+
+/* Featured project */
+.featured-card .featured-img {
+    width: 100%;
+    height: 100%;
+    min-height: 220px;
+    max-height: 340px;
+    object-fit: cover;
+    object-position: left top;
+    display: block;
+}
+.featured-card:hover { transform: translateY(-4px); }
+
+/* En escritorio la imagen llena toda la altura de la tarjeta */
+@media (min-width: 992px) {
+    .featured-card .featured-media { position: relative; min-height: 300px; }
+    .featured-card .featured-media .featured-img {
+        position: absolute;
+        inset: 0;
+        height: 100%;
+        max-height: none;
+    }
+}
 
 .badge-tech {
     display: inline-block;
-    padding: 2px 8px; margin-right: 4px; margin-bottom: 4px;
+    padding: 2px 9px; margin-right: 4px; margin-bottom: 5px;
     font-size: 0.7rem; font-weight: 600;
     color: var(--secondary-color);
     background-color: rgba(59, 130, 246, 0.1);
@@ -109,64 +241,138 @@ h1 strong {
     border-radius: 50px;
 }
 
-.skill-card {
-    background-color: rgba(30, 41, 59, 0.8); /* Fondo más solido */
-    border-radius: 15px; border: 1px solid var(--card-border);
+/* Experience */
+.exp-company { color: var(--primary-color) !important; font-size: 1rem; font-weight: 600; }
+.exp-location { color: var(--text-muted); font-size: 0.85rem; }
+.exp-list { padding-left: 1.1rem; }
+.exp-list li { margin-bottom: 0.45rem; }
+.exp-list li::marker { color: var(--primary-color); }
+
+/* Skills */
+.skill-group {
+    background-color: rgba(30, 41, 59, 0.8);
+    border-radius: 14px;
+    border: 1px solid var(--card-border);
+    padding: 14px 16px 10px;
     transition: all 0.3s ease;
 }
-.skill-card:hover {
-    background-color: var(--card-bg); transform: translateY(-5px);
-    border-color: var(--primary-color); box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+.skill-group:hover {
+    background-color: var(--card-bg);
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
-.skill-card i { display: block; margin-bottom: 5px; }
+.skill-group h6 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+}
 
+/* Awards */
+.award-card { border-left: 3px solid rgba(148, 163, 184, 0.4); }
+.award-card.award-gold { border-left-color: #f59e0b; }
+.award-card h5 { color: var(--text-main) !important; }
 
-/* --- LOGICA DE STICKY STACKING (NUEVO) --- */
+/* Education timeline */
+.timeline { list-style: none; padding-left: 0; margin: 0; position: relative; }
+.timeline li {
+    position: relative;
+    padding-left: 26px;
+    padding-bottom: 18px;
+}
+.timeline li:last-child { padding-bottom: 0; }
+.timeline li::before {
+    content: '';
+    position: absolute;
+    left: 4px; top: 8px;
+    width: 11px; height: 11px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+}
+.timeline li::after {
+    content: '';
+    position: absolute;
+    left: 9px; top: 24px; bottom: 2px;
+    width: 1px;
+    background: rgba(148, 163, 184, 0.25);
+}
+.timeline li:last-child::after { display: none; }
+.timeline h5 { color: var(--text-main) !important; }
+.timeline-date { font-size: 0.8rem; font-weight: 600; color: var(--secondary-color); white-space: nowrap; }
 
-/* El contenedor solo envuelve, no necesita propiedades especiales de scroll */
+.contact-cta {
+    padding: 2rem 1rem;
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(147, 197, 253, 0.04));
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+/* --- LOGICA DE STICKY STACKING --- */
+
 .snap-container {
     width: 100%;
     position: relative;
 }
 
-/* Cada sección se vuelve pegajosa al llegar arriba */
+/* Cada sección se vuelve pegajosa al llegar arriba.
+   main.js ajusta "top" en secciones más altas que la pantalla
+   para que todo su contenido sea visible antes de apilarse. */
 .full-page-section {
     position: sticky;
     top: 0;
-    height: 100vh; /* Altura completa obligatoria para el efecto */
+    min-height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centrar contenido verticalmente */
-    
-    /* Borde superior sutil para separar las tarjetas visualmente al apilarse */
-    box-shadow: 0 -5px 20px rgba(0,0,0,0.5); 
-    border-top: 1px solid rgba(255,255,255,0.05);
-    
-    /* Aseguramos que el contenido no se desborde */
-    overflow: hidden;
+    justify-content: center;
+    padding: calc(var(--nav-height) + 24px) 0 48px;
+
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-
 /* --- FONDOS DE SECCIONES --- */
-/* Usamos fondos más sólidos para que tapen bien a la sección anterior */
-
 #home {
     background-color: var(--bg-body);
     background-image: radial-gradient(circle at 80% 30%, rgba(59, 130, 246, 0.15) 0%, #0f172a 70%);
     z-index: 10;
 }
 
-#exp-skills {
-    background-color: #0f172a; /* Fondo base sólido */
+#experience {
+    background-color: #0f172a;
     background-image: radial-gradient(circle at 10% 50%, rgba(147, 197, 253, 0.1) 0%, #0f172a 60%);
-    z-index: 20; /* Mayor Z-index para asegurar que tape al anterior */
+    z-index: 20;
 }
 
 #projects {
     background-color: #0f172a;
     background-image: radial-gradient(ellipse at 50% 0%, rgba(59, 130, 246, 0.15) 0%, #0f172a 80%);
     z-index: 30;
+}
+
+#background {
+    background-color: #0f172a;
+    background-image: radial-gradient(circle at 90% 80%, rgba(147, 197, 253, 0.1) 0%, #0f172a 65%);
+    z-index: 40;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 991.98px) {
+    .full-page-section { padding-top: calc(var(--nav-height) + 16px); }
+    .featured-card .featured-img { max-height: 220px; min-height: 160px; }
+}
+
+@media (max-width: 575.98px) {
+    .stat-value { font-size: 1rem; }
+    .stat-label { font-size: 0.68rem; }
+    .lead { font-size: 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; }
 }
 
 /* Custom Scrollbar */
