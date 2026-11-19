@@ -14,7 +14,7 @@ MSc in Artificial Intelligence (Universidad de los Andes) and Petroleum Engineer
 
 ### 🛠️ What you'll find
 * **Experience:** Data Scientist at Cenyt Engineers & Consultants (ML, MLOps with MLflow, LLMs & AI agents, Power BI).
-* **Projects:** MSc in AI work (child-stunting prediction with Fundación Canguro, MLOps deployment on AWS, computer vision, NLP, regression and classification) and Henry Bootcamp projects.
+* **Projects:** MSc in AI work (child-stunting prediction with Fundación Canguro and MLOps on AWS, computer vision, NLP, regression and classification) and Henry Bootcamp projects.
 * **Hackathons:** 3rd place at the UNDP Colombia Data Hackathon 2026: disaster-displacement risk model ([code](https://github.com/felipe97rg/Hackathon-pnud-riesgo-desplazamiento) · [interactive map](https://felipe97rg.github.io/projects/undp-displacement-risk/)).
 
 ### 🧰 Stack

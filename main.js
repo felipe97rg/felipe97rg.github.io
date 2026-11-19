@@ -70,7 +70,6 @@
         p8_desc: 'Para cada uno de los 1.102 municipios de Colombia y cada mes, el modelo estima la probabilidad de un evento con afectación, cuántas personas podrían desplazarse y un rango de incertidumbre del 80 % (escenario bajo y alto) para planear albergues y ayuda. Desarrollado para la hackathon del PNUD Colombia, donde obtuvo el <strong>tercer lugar</strong>.',
         p8_stack: 'Historial municipal sin fuga de información (solo años anteriores, suavizado hacia el departamento y el país), cartografía pública (ubicación, población y 5 municipios vecinos) y lluvia satelital CHIRPS, la mayor mejora (+3,6 puntos en validación; un placebo no aportó nada). Cuatro modelos LightGBM elegidos entre 63 experimentos con una regla de decisión fijada de antemano; el AUC en la prueba en vivo subió de 0,759 a <strong>0,780</strong>.',
         origin_msc: 'Maestría IA · Uniandes',
-        origin_msc_2026: 'Maestría IA · Uniandes · 2026',
         origin_henry_team: 'Henry Bootcamp · 2024 · Proyecto en equipo',
         tag_regression: 'Regresión',
         tag_recsys: 'Recomendador',
@@ -80,8 +79,6 @@
         p0_desc: 'En alianza con la <strong>Fundación Canguro</strong>: predice si un bebé desarrollará desnutrición crónica en sus primeros 24 meses usando solo el perfil materno y los datos del nacimiento, para priorizar los recursos de seguimiento. Evaluado con validación cruzada estratificada repetida e intervalos de confianza; el modelo servido alcanza un <strong>ROC-AUC de 0,79</strong> a 12 meses.',
         p0_stack: 'Pipeline de datos con DVC, seguimiento de experimentos con MLflow en EC2, modelo empaquetado como wheel, API en FastAPI (7 endpoints, 55 pruebas) y tablero en Streamlit, desplegados con Docker Compose en AWS EC2.',
 
-        p1_title: 'Abandono bancario: del paquete a la nube',
-        p1_desc: 'Empaqueté un modelo de abandono de clientes como wheel de Python versionado (pytest, tox, mypy), lo serví con una API en FastAPI con pruebas y lo desplegué, junto a un tablero en Dash, en contenedores Docker sobre AWS EC2.',
         p2_title: 'Detección de tumores cerebrales (visión por computador)',
         p2_desc: 'Red neuronal convolucional en PyTorch que clasifica imágenes de resonancia magnética cerebral para detectar tumores.',
         p3_title: 'Clasificación de textos científicos (NLP)',
